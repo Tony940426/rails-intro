@@ -3,6 +3,9 @@ class PagesController < ApplicationController
   end
 
   def contact
+    @members = ['Claire', 'Toni', 'Santi', 'Sarah', 'Olivia']
+
+    raise
   end
 
   def home
