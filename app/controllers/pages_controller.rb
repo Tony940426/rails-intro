@@ -3,9 +3,15 @@ class PagesController < ApplicationController
   end
 
   def contact
-    @members = ['Claire', 'Toni', 'Santi', 'Sarah', 'Olivia']
+    @members = ['claire', 'toni', 'santi', 'sarah', 'olivia']
 
-    raise
+    search = params[:member]
+
+    @members = @members.select do |member|
+      if search
+        member.start_with? search.downcase
+      end
+    end
   end
 
   def home
